@@ -1,0 +1,24 @@
+python /dm_count/train.py \
+    --experiment 3.3.21 \
+    --comments 'Paper: people_trans_rand' \
+    --train-limit 100000000 \
+    --train-dir '/dm_count/data/preprocessed_data/people.3.0.3/train' \
+    --train-dataset 'blendercam_preprocess' \
+    --val-limit 1000000 \
+    --val-dir '/datasets/sht/part_B/' \
+    --val-dataset 'sht-b' \
+    --model 'resnet50' \
+    --lr 1e-6 \
+    --max_lr 1e-5 \
+    --weight-decay 1e-4 \
+    --max-epoch 80 \
+    --val-epoch 1 \
+    --val-start 0 \
+    --batch-size 14 \
+    --num-workers 8 \
+    --crop-size 512 \
+    --wot 0.1 \
+    --wtv 0.01 \
+    --reg 10.0 \
+    --num-of-iter-in-ot 100 \
+    --norm-cood 0

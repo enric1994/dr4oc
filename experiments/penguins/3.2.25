@@ -1,0 +1,24 @@
+python /dm_count/train.py \
+    --experiment 3.2.25 \
+    --comments 'test real penguins size /4' \
+    --train-limit 8000000 \
+    --train-dir '/datasets/the_penguin_dataset' \
+    --train-dataset 'penguins' \
+    --val-limit 4000000 \
+    --val-dir '/datasets/the_penguin_dataset' \
+    --val-dataset 'penguins' \
+    --model 'resnet50' \
+    --lr 1e-6 \
+    --max_lr 1e-5 \
+    --weight-decay 1e-4 \
+    --max-epoch 1000 \
+    --val-epoch 1 \
+    --val-start 0 \
+    --batch-size 10 \
+    --num-workers 8 \
+    --crop-size 512 \
+    --wot 0.1 \
+    --wtv 0.01 \
+    --reg 10.0 \
+    --num-of-iter-in-ot 20 \
+    --norm-cood 0

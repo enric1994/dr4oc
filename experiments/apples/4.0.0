@@ -1,0 +1,24 @@
+python /dm_count/train.py \
+    --experiment 4.0.0 \
+    --comments 'test apple 1' \
+    --train-limit 100000000 \
+    --train-dir '/datasets/minneapple' \
+    --train-dataset 'apples' \
+    --val-limit 1000000 \
+    --val-dir '/datasets/minneapple' \
+    --val-dataset 'apples' \
+    --model 'resnet50' \
+    --lr 1e-6 \
+    --max_lr 1e-5 \
+    --weight-decay 1e-4 \
+    --max-epoch 1000 \
+    --val-epoch 1 \
+    --val-start 0 \
+    --batch-size 4 \
+    --num-workers 8 \
+    --crop-size 512 \
+    --wot 0.1 \
+    --wtv 0.01 \
+    --reg 10.0 \
+    --num-of-iter-in-ot 20 \
+    --norm-cood 0

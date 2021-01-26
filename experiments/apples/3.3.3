@@ -1,0 +1,22 @@
+python /dm_count/train.py \
+    --experiment 3.3.3 \
+    --comments 'Real apples count' \
+    --train-dir '/dm_count/data/raw/apples.0.1.1' \
+    --train-dataset 'blendercam' \
+    --val-dir '/datasets/apple_counting' \
+    --val-dataset 'apples' \
+    --model 'resnet50' \
+    --lr 1e-6 \
+    --max_lr 1e-5 \
+    --weight-decay 1e-4 \
+    --max-epoch 1000 \
+    --val-epoch 1 \
+    --val-start 0 \
+    --batch-size 128 \
+    --num-workers 8 \
+    --crop-size 128 \
+    --wot 0.1 \
+    --wtv 0.01 \
+    --reg 10.0 \
+    --num-of-iter-in-ot 20 \
+    --norm-cood 0

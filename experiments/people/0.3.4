@@ -1,0 +1,22 @@
+python /dm_count/train.py \
+    --experiment 0.3.4 \
+    --comments 'Basic pipeline on people 2k' \
+    --train-dir '/dm_count/data/preprocessed_data/people.3.0.2/train' \
+    --train-dataset 'blendercam' \
+    --val-dir '/datasets/sht/part_B/train' \
+    --val-dataset 'sht-b' \
+    --model 'resnet50' \
+    --lr 1e-6 \
+    --max_lr 5e-6 \
+    --weight-decay 1e-5 \
+    --max-epoch 1000 \
+    --val-epoch 1 \
+    --val-start 0 \
+    --batch-size 8 \
+    --num-workers 4 \
+    --crop-size 512 \
+    --wot 0.1 \
+    --wtv 0.01 \
+    --reg 10.0 \
+    --num-of-iter-in-ot 50 \
+    --norm-cood 0

@@ -1,0 +1,39 @@
+version: '2.3'
+
+services:
+
+  dm_count:
+    image: dm_count
+    container_name: dm_count
+    working_dir: /dm_count
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../:/dm_count
+      - /media/enric/enric_hdd/datasets/places365_standard/:/datasets/places:ro
+      - /media/enric/enric_hdd/datasets/human_lowpoly/:/datasets/human_lowpoly:ro
+      - /media/enric/enric_hdd/datasets/UCF-QNRF_ECCV18/:/datasets/UCF-QNRF_ECCV18:ro
+      - /media/enric/enric_hdd/datasets/ShanghaiTech/:/datasets/sht:ro
+      - /media/enric/enric_hdd/datasets/the_penguin_dataset/:/datasets/the_penguin_dataset:ro
+      - /media/enric/enric_hdd/datasets/CityCam/:/datasets/CityCam:ro
+      - /media/enric/enric_hdd/datasets/TRANCOS_v3/:/datasets/TRANCOS_v3:ro
+      - /media/enric/enric_hdd/datasets/apple_counting/:/datasets/apple_counting:ro
+
+
+
+
+    runtime: nvidia
+    shm_size: '12gb'
+    command: tail /dev/null -f
+  
+  tensorboard:
+    image: tensorflow/tensorflow:1.14.0
+    container_name: tensorboard
+    working_dir: /logs
+    ports:
+     - "6000:6006"
+    volumes:
+      - ../logs:/logs
+    command: tensorboard --logdir /logs
+  
